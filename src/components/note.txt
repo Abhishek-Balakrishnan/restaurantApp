@@ -1,0 +1,92 @@
+Api call in js
+--------------
+AJAX
+
+
+-fetch
+-xmlhttp
+-async await
+
+useeffect use to replace ngonint
+
+
+
+redirection in react
+--------------------
+
+react-router-dom (npm i react-router-dom)
+
+import { 
+    BrowserRouter as Router-all routing need components
+    ,Routes                -to set path for each component
+    ,Route                 -more than one path
+     } from 'react-router-dom';
+
+
+     useParams - hook used to access params from component url
+
+*REDUX
+------
+
+coupling(many connection b/w parrent and child components)
+
+props drilling (if increace coupling)
+
+to avoid props drilling we need to reduce coupling and make all the components independent
+
+for this react intraduce new technology  -REDUX
+
+
+redux process
+-------------
+
+create a new js file to keep the states,all the components can access this js file
+
+
+-the components can access the data from the js file but thay  cant update datas in js file
+
+
+------------------------------------------------------------------------------------------:
+reducer>                                                                    >data         :
+                                                                            +             :--
+                                                                            state           |
+      ^                                                                                     :
+[reaponse as Paylod]                                                                        :
+                                                                                            |
+                                                                                            :
+      ^                                                                                     |
+action(logic)                       [Dispatch]                               < component    |
+--------------------------------------------------------------------------------------------:
+
+
+
+
+Action =>a file with all logics to update the state
+dispatch=>method used to dispatch the logic in action file when the components need state updation
+Reducer=> update the dates in js file according to the Paylod responce get from action file
+
+
+Libraries to apply redux
+------------------------
+
+1-redux
+2-REACT REDUX
+3-REDUX-THUNK
+
+npm i redux react-redux redux-thunk
+
+createStore() - method used to create store in js file
+              - 2 args
+              -  1-reducer
+                 2- middileware(used to make synchronous redux to asynchronous)
+
+applyMiddileware- method in REDUX to apply middileware  
+
+combineReducers()- method in  REDUX used to combine all the reducers in js file
+
+thunk - in REDUX-THUNK used to create middileware
+
+
+1- create store 
+2- applay the store in indux .js 
+   -provider  -  its a tag used to pass the store (react-redux)
