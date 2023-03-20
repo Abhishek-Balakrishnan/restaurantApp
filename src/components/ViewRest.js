@@ -7,6 +7,8 @@ import Col from 'react-bootstrap/Col';
 import { Image, Button } from 'react-bootstrap';
 import Operatingtime from './Operatingtime';
 import Review from './Review';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 function ViewRest() {
 
@@ -23,11 +25,15 @@ function ViewRest() {
   }
   // console.log(allrestareunt);
 
-  const restdata = allrestareunt.find(item => item.id == params.id)
   // console.log(restdata);
   useEffect(() => {
-    getrestareuntdata()
+    // getrestareuntdata()
   }, [])
+  const result=useSelector(state=>state. restaurantReducer)
+const {restaurantList}=result
+const restdata = restaurantList.find(item => item.id == params.id)
+
+
 
   return (
     <>

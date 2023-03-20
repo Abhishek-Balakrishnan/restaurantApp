@@ -1,7 +1,10 @@
 import { createStore,combineReducers,applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import { restaurantListReducer } from "./reducers/resturentReducers";
 //create reducer
 const reducers=combineReducers({
+
+    restaurantReducer:restaurantListReducer
 
 })
 // create middileware

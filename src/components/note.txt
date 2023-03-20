@@ -46,17 +46,42 @@ create a new js file to keep the states,all the components can access this js fi
 -the components can access the data from the js file but thay  cant update datas in js file
 
 
-------------------------------------------------------------------------------------------:
-reducer>                                                                    >data         :
-                                                                            +             :--
-                                                                            state           |
-      ^                                                                                     :
-[reaponse as Paylod]                                                                        :
-                                                                                            |
-                                                                                            :
-      ^                                                                                     |
-action(logic)                       [Dispatch]                               < component    |
---------------------------------------------------------------------------------------------:
+
+                              |                 |
+                              |     Reducer     |
+                              |                 |     ---------------------------------------------------------|
+                              |                 |                                                              |                 
+                              |                 |                                                              |         
+                              |                 |                                                              > 
+                              |-----------------|
+                                                                                                          |-----------------|                                                                             |-----------------|
+                                                                                                          |                 |
+                                                                                                          |     data.js     |
+                                     ^                                                                    |                 |
+                                     |                                                                    |                 |
+                                     |                                                                    |                 |
+                                     |                                                                    |      state      |
+                                     |                                                                    |-----------------|
+                                     |                                                                             | 
+                                     | Responce as paylod                                                          | 
+                                     |                                                                             | 
+                                     |                                                                             |     
+                                     |                                                                             > 
+                                     |                                                                     |-----------------|
+                                     |                                                                     |                 |
+                                     |                                                                     |    component    |
+                                     |                                                                     |                 |
+                                                                                                           |                 |
+                                                                                                           |                 |
+                                                                                                           |                 |
+                                                                                                           |-----------------|
+                              |-----------------|
+                              |                 |
+                              |     Action      |                                                                   |                        
+                              |                 |        < ---------------------------------------------------------|                   
+                              |                 |                            Dispatch
+                              |    (logic)      |
+                              |-----------------|
 
 
 
@@ -88,5 +113,13 @@ thunk - in REDUX-THUNK used to create middileware
 
 
 1- create store 
-2- applay the store in indux .js 
+2- aplay the store in indux .js 
    -provider  -  its a tag used to pass the store (react-redux)
+
+AXIOS -module used to make http methods (api call)
+      npm i axios
+
+useDispatch - hook used to dispatch action in component -react-redux
+
+
+to access daras from store to component - useSelecter-hook
